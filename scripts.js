@@ -1,16 +1,18 @@
-let query = 'whales';
-let url = `http://www.omdbapi.com/?i=tt0137523&apikey=88bd5903`;
+let query = 'Fight Club'; //http://www.omdbapi.com/?i=tt0137523&apikey=88bd5903
+let url = `http://www.omdbapi.com/?apikey=88bd5903&t${query}`;
 let content = document.getElementById('content');
 
 
 
 function search(){
+  ////////////////////////////   NEED TO FIX SEARCHES ////////////////////////////////////////
     query = document.getElementById('search').value || 'Fight Club';
     
-    url = `http://www.omdbapi.com/?i=tt0137523&apikey=88bd5903`;
-    //content.innerHTML=''
+    url = `http://www.omdbapi.com/?apikey=88bd5903&t${query}`;
+    content.innerHTML=''
 
 
+    
     //ASYNCHRONUS CODE
     fetch(url)
         .then (res => res.json())
@@ -20,7 +22,6 @@ function search(){
 
 
 // res == all of my API infromation 
-// window.onload = search
 
 
 
@@ -44,4 +45,11 @@ function web(res){
 }
 search()
 
-console.log('feed cat')
+//console.log('feed cat')
+
+
+window.onkeydown = (event) => { 
+  if(event.key == 'Enter' ){ 
+    search()
+  }
+}

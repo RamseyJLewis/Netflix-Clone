@@ -2,15 +2,25 @@
 body{
     color: black;
     background-color: black;
+    background-image: url(./assets/netflix.jpg);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family:  Helvetica, sans-serif;
 }
 h1{
-    color: white;
+    color: red;
+    font-size: 60px;
+   
 }
-
+#searchButton{
+    width: 154px;
+    height:20px;
+    color:black;
+    background-color: white;
+    z-index: 0%;
+}
 img{
     max-width: 250px;
     max-height: 70%;
@@ -18,3 +28,27 @@ img{
     padding: 10px;
     
 }
+body::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+body::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+  
+body::-webkit-scrollbar-thumb {
+    background: red;
+  }
+  /* .card{
+    padding: 20px;
+    border: 3px solid white;
+    max-height: 250px;
+    width: 250px;
+    background-color: #0d1f30;
+    border-radius: 25px;
+    overflow: auto;
+    margin: auto;
+    
+    margin: 10px;
+    padding: 10px;
+} */
