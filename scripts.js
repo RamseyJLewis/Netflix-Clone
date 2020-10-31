@@ -22,12 +22,8 @@ function search(){
         .then (res => res.json())
         .then(res => web(res))
         .catch(err => console.log(err)) 
-
-    
     }
 }
-
-
 
 // res == all of my API infromation 
 function web(res){
@@ -46,7 +42,6 @@ function web(res){
        
      
         card.appendChild(picture)
-        
         content.appendChild(card)
         
   //}
