@@ -1,18 +1,16 @@
-let query = 'Fight Club'; //http://www.omdbapi.com/?i=tt0137523&apikey=88bd5903
-let url = `http://www.omdbapi.com/?apikey=88bd5903&t${query}`;
+let query; //http://www.omdbapi.com/?i=tt0137523&apikey=88bd5903
+let url = `http://www.omdbapi.com/?t=${query}&apikey=88bd5903`;
 let content = document.getElementById('content');
 
 
 
 function search(){
-  ////////////////////////////   NEED TO FIX SEARCHES ////////////////////////////////////////
-    query = document.getElementById('search').value || 'Fight Club';
+  
+    query = document.getElementById('search').value;
     
-    url = `http://www.omdbapi.com/?apikey=88bd5903&t${query}`;
+    url = `http://www.omdbapi.com/?t=${query}&apikey=88bd5903`;
     content.innerHTML=''
 
-
-    
     //ASYNCHRONUS CODE
     fetch(url)
         .then (res => res.json())
@@ -21,32 +19,30 @@ function search(){
 }
 
 
+
 // res == all of my API infromation 
-
-
-
-
 function web(res){
   //for(let i = 0; i < res; i++){
 
-        //creating elements
+        // THIS IS TO CREATE AN ELEMENT ( IMAGE, DIV ECT..) SO I CAN LATER-
+        // PASS INFORMATION INTO SAID SO ELEMENT
+        let picture = document.createElement("img")
         let card = document.createElement('div') 
-        let poster = document.createElement("img")
-        //let descption = document.createElement('div')
-        //card.setAttribute('class', 'card')
-        //description.setAttribute('class', 'description')
-
-        poster.src = res.Poster
+  
+      
+        card.setAttribute('class', 'card')
         
-        card.appendChild(poster)
 
-        document.body.appendChild(card)
+        picture.src = res.Poster
+        
+  
+        card.appendChild(picture)
+    
+        content.appendChild(card)
+  
   // }
 }
 search()
-
-//console.log('feed cat')
-
 
 window.onkeydown = (event) => { 
   if(event.key == 'Enter' ){ 
