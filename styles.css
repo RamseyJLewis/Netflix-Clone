@@ -5,15 +5,28 @@ body{
     background-image: url(./assets/netflix.jpg);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     font-family:  Helvetica, sans-serif;
+
+    flex-wrap: wrap;
+    /* position: fixed;     */
 }
+/* #screenTop{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
 h1{
     color: red;
     font-size: 60px;
-   
 }
+#top{
+  position: fixed;
+
+}
+
 #searchButton{
     width: 154px;
     height:20px;
@@ -22,7 +35,7 @@ h1{
 }
 #search{
   text-align: center;
-  color: blacka;
+  color: black;
 
 }
 
@@ -52,7 +65,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: flex-start;   
 }
 
