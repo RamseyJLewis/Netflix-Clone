@@ -34,15 +34,15 @@ function web(res){
         
        
         picture.src = res.Poster
-        if(picture.src == "undefined"){
-          window.alert('yes')
-        }else{
+        // if(picture.src == "undefined"){
+        //   window.alert('yes')
+        // }else{
        
      
         card.appendChild(picture)
         content.appendChild(card)
         
-  }
+  // }
 }
 
 // Enter Key can be used to search 
