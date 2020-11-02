@@ -1,4 +1,7 @@
 
+html{
+  min-width:1000px !important;  
+}
 body{
     color: black;
     background-color: black;
@@ -8,34 +11,61 @@ body{
     justify-content: flex-start;
     align-items: center;
     font-family:  Helvetica, sans-serif;
-
     flex-wrap: wrap;
-    /* position: fixed;     */
 }
-/* #screenTop{
+/* SIDE BAR ////////////////////////////// */
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: red;
+}
+/*  SEARCH AND LOGO ////////////////////////////// */
+.top{
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-} */
-h1{
+  position: fixed;
+} 
+
+#movies {
     color: red;
     font-size: 60px;
-}
-#top{
-  position: fixed;
-
+    flex-direction: column;
 }
 
-#searchButton{
-    width: 154px;
-    height:20px;
-    color:black;
-    background-color: white;
-}
 #search{
   text-align: center;
   color: black;
+}
+
+/* POSTER  ////////////////////////////// */
+#content{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;   
+  padding-top: 250px;
+}
+.card{
+  padding: 20px;
+  border: 3px solid red;
+  max-height: 500px;
+  width: 300px;
+  background-color: #0d1f30;
+  border-radius: 25px;
+  overflow: auto;
+  margin: auto;
+  
+  margin: 10px;
+  padding: 10px;
 
 }
 
@@ -47,38 +77,7 @@ h1{
     margin: 20px;
     display: flex;
     flex-direction: row;
-    
-    
-}
-body::-webkit-scrollbar {
-    width: 0.25rem;
-  }
-  
-body::-webkit-scrollbar-track {
-    background: #1e1e24;
-  }
-  
-body::-webkit-scrollbar-thumb {
-    background: red;
-  }
-  #content{
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;   
 }
 
-.card{
-    padding: 20px;
-    border: 3px solid red;
-    max-height: 500px;
-    width: 300px;
-    background-color: #0d1f30;
-    border-radius: 25px;
-    overflow: auto;
-    margin: auto;
-    
-    margin: 10px;
-    padding: 10px;
-}
+
+

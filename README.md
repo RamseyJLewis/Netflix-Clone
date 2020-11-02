@@ -1,7 +1,7 @@
 # Netflix-Clone
 TO DO LIST
 [✓] MAKE CARDS ONLY GO LEFT
-[] Make logo static & searchbar
+[✓] Make logo static & searchbar
 []MAKE NOT FOUND ALERT
 []MAKE IT SO THAT IF YOU HOVER OVER CARD WITH MOUSE MOVIE GREYS OUT 
 []ON CARD GREY OUT PUT INFO ABOUT MOVIE ON 
