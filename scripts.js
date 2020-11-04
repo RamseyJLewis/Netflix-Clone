@@ -35,8 +35,7 @@ function web(res){
     picture.setAttribute('class', 'posterImg')
   
     picture.src = res[i].Poster
-  
-
+    
     console.log(picture.src.slice(-3))
     if(picture.src.slice(-3) == "N/A"){
       picture.src ='./assets/noImage.jpg'
