@@ -2,9 +2,9 @@
 TO DO LIST
 [✓] MAKE CARDS ONLY GO LEFT
 [✓] Make logo static & searchbar
-[]MAKE NOT FOUND alert 'Your Search did  not have any resuls'
-[]MAKE IT SO THAT IF YOU HOVER OVER CARD WITH MOUSE MOVIE GREYS OUT 
-[]ON CARD GREY OUT PUT INFO ABOUT MOVIE ON 
+[] Make search for movie information 
+[] Set Information in inofrmation searh to hover
+[]MAKE IT SO THAT IF YOU HOVER OVER CARD WITH MOUSE MOVIE GREYS OUT under the text
 []ADD DETAILS LIKE PRICE OF NETFLIX AT BOTTOM OS SCREEN
 
 /////////REACH
