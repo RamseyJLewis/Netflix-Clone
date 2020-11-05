@@ -1,9 +1,9 @@
 
 let query = ''; 
 let url = `http://www.omdbapi.com/?t=${query}&apikey=88bd5903`;
+let infoUrl = `http://www.omdbapi.com/?i=${query}&apikey=88bd5903`;
 let content = document.getElementById('content');
 
-// http://www.omdbapi.com/?i=tt0234215&apikey=88bd5903
 
 function search(){
     // Created So That if search was just done you cant do it again
@@ -19,28 +19,32 @@ function search(){
         .catch(err => console.log(err)) 
     }
 }
-
 // res == all of my API infromation 
 function web(res){
-  //RUNNING FOR LOOP IN FUCNTION BREAKS CODE .... WHY??? ////////
+
   for(let i = 0; i < res.length; i++){
-    console.log(res)
+     console.log(res)
 
   
     let picture = document.createElement("img")
     let card = document.createElement('div') 
+    let title = document.createElement('div')
 
   
-    card.setAttribute('class', 'card')
+    card.setAttribute('class', 'card')  
     picture.setAttribute('class', 'posterImg')
+    title.setAttribute('class', 'title')
   
     picture.src = res[i].Poster
+    title.src = res[i].Title
+    console.log(title.src)
+
     
-    console.log(picture.src.slice(-3))
+    // if the search comes up wihtout a picture add the noImage jpg located in assets
     if(picture.src.slice(-3) == "N/A"){
       picture.src ='./assets/noImage.jpg'
     }
-
+    card.appendChild(title)
     card.appendChild(picture)
     content.appendChild(card) 
   }
@@ -54,5 +58,6 @@ window.onkeydown = (event) => {
   //   alert('Your search did not have any results.')
   }
 }
+
 // alterSearch()
 // onLoad()

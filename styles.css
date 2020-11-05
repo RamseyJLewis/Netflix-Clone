@@ -26,7 +26,7 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background: red;
-  width: 0.05px;
+  width: 0.0px;
   border-radius: 25px;
   height: 5px;
 }
@@ -85,6 +85,17 @@ body::-webkit-scrollbar-thumb:hover {
     display: flex;
     flex-direction: row;
 }
+.title{
+  width: 250;
+  max-height: 250;
+  color: red;
+
+  flex-direction: row;
+  /* z-index: 3; */
+}
+#title::after {
+  content: attr(data-content);
+}
 
 .flip-card {
   background-color: transparent;
@@ -114,11 +125,11 @@ body::-webkit-scrollbar-thumb:hover {
   backface-visibility: hidden;
 }
 .flip-card-front {
-  background-color: #bbb;
+  background-color:transparent;
   color: black;
 }
 .flip-card-back {
-  background-color: dodgerblue;
+  background-color: black;
   color: white;
   transform: rotateY(180deg);
 }
