@@ -1,6 +1,8 @@
 
 let query = ''; 
-let url = `http://www.omdbapi.com/?t=${query}&apikey=88bd5903`;
+let page = 1;
+let lastQuery  = '';
+let url = `http://www.omdbapi.com/?t=${query}&page=${page}&apikey=88bd5903`;
 let infoUrl = `http://www.omdbapi.com/?i=${query}&apikey=88bd5903`;
 let content = document.getElementById('content');
 
@@ -9,16 +11,29 @@ function search(){
     // Created So That if search was just done you cant do it again
     if( query !== document.getElementById('search').value){
       query = document.getElementById('search').value;
+    }
+    if( query !== lastQuery){
+      page = 1
+      content.innerHTML = ''
+    } 
+    if( query == lastQuery){
+      page++
+    }
+    lastQuery = query
     
-      url = `http://www.omdbapi.com/?s=${query}&apikey=88bd5903`;
+      url = `http://www.omdbapi.com/?s=${query}&page=${page}&apikey=88bd5903`;
+      console.log(page)
+
+      
 
       //ASYNCHRONUS CODE
       fetch(url)
           .then (res => res.json())
           .then(res => web(res.Search))
           .catch(err => console.log(err)) 
-    }
+      
 }
+
 // res == all of my API infromation 
 function web(res){
   console.log(res)
@@ -32,10 +47,11 @@ function web(res){
     let flipCardFront = document.createElement('div') 
     let flipCardBack = document.createElement('div') 
     let title = document.createElement('div')
+    let year = document.createElement('div')
 
   
     flipCard.setAttribute('class', 'flip-card')  
-    flipCardInner.setAttribute('class', 'flip-card-inner')  
+    flipCardInner.setAttribute('class',  'flip-card-inner')  
     flipCardFront.setAttribute('class', 'flip-card-front')  
     flipCardBack.setAttribute('class', 'flip-card-back')  
 
@@ -44,10 +60,12 @@ function web(res){
 
     picture.setAttribute('class', 'posterImg')
     title.setAttribute('class', 'title')
+    year.setAttribute('class', 'year')
   
     picture.src = res[i].Poster
-    title.innerText = res[i].Title
-    console.log(title.src)
+    title.innerText =  res[i].Title
+    year.innerHTML =  res[i].Year 
+    console.log(res[i].Year)
 
     
     // if the search comes up wihtout a picture add the noImage jpg located in assets
@@ -57,6 +75,7 @@ function web(res){
 
     // Read from bottom is HTML indentation 
           flipCardBack.appendChild(title)
+          flipCardBack.appendChild(year)
         flipCardInner.appendChild(flipCardBack) 
           flipCardFront.appendChild(picture)
         flipCardInner.appendChild(flipCardFront)
@@ -67,13 +86,23 @@ function web(res){
 }
 
 // Enter Key can be used to search 
-window.onkeydown = (event) => { 
+window.onkeydown = (event) => {
+
   if(event.key == 'Enter' ){ 
     search()
   // } if(res.Poster == 'undefined'){
   //   alert('Your search did not have any results.')
   }
 }
+
+window.addEventListener('scroll', function(e) {
+  if(window.scrollX+window.innerWidth >= content.offsetWidth ){
+    search()
+  }
+  console.log(window.scrollX+window.innerWidth) 
+  console.log(content.offsetWidth)
+})
+
 
 // alterSearch()
 // onLoad()

@@ -10,7 +10,14 @@ body{
     align-items: center;
     font-family:  Helvetica, sans-serif;
     flex-wrap: wrap;
-    /* min-width:350px !important;   */
+}
+.logo{
+  width: 100px;
+  height: 5px;
+}
+#search{
+  text-align: center;
+  color: black;
 }
 
 /* SCROLL BAR ////////////////////////////// */
@@ -44,16 +51,8 @@ body::-webkit-scrollbar-thumb:hover {
   position: fixed;
 } 
 
-#movies {
-    color: red;
-    font-size: 60px;
-    flex-direction: column;
-}
 
-#search{
-  text-align: center;
-  color: black;
-}
+
 
 /* POSTER  ////////////////////////////// */
 #content{
@@ -67,12 +66,12 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .flip-card {
-  border: 5px solid red;
-  height: 330px;
-  width: 300px;
+
+  min-height: 800px;
+  width: 306px;
   background-color: #0d1f30;
-  border-radius: 25px;
   margin: auto;
+  padding-top: 75px;
   
   margin: 10px;
   background-color: transparent;
@@ -82,12 +81,12 @@ body::-webkit-scrollbar-thumb:hover {
 
 .flip-card-inner {
   position: relative;
-  width: 300px;
+  width: 306px;
   height: 100%;
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  border-radius: 25px;
+
 }
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
@@ -95,8 +94,8 @@ body::-webkit-scrollbar-thumb:hover {
 
 .flip-card-front, .flip-card-back {
   position: absolute;
-  width: 300px;
-  height: 100%;
+  width: 306px;
+  min-height: 400px;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
   
@@ -106,27 +105,43 @@ body::-webkit-scrollbar-thumb:hover {
   color: black;
 }
 .flip-card-back {
-  background-color: black;
+
+  background-color: #181818;
   color: white;
   transform: rotateY(180deg);
   padding-top: 20px;
+  border-radius: 25px;
 }
 .posterImg{
   width: 300px;
-  max-height: 100%;
   /* border-radius: 25px; */
 
   display: flex;
   flex-direction: row;
+  border: 3px solid red;
+  border-radius: 25px;
 }
 .title{
 width: 250;
 max-height: 250;
-color: red;
+color:white;
+font-weight: bolder;
 
 flex-direction: row;
 /* z-index: 3; */
 }
+.year{
+  width: 250;
+  max-height: 250;
+  color:white;
+  
+  flex-direction: row;
+  /* z-index: 3; */
+  }
+  #year::after {
+    content: attr(data-content);
+    }
+    
 #title::after {
 content: attr(data-content);
 }
