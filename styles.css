@@ -65,53 +65,29 @@ body::-webkit-scrollbar-thumb:hover {
   padding-top: 250px;
   overflow-x: auto;
 }
-.card{
-  /* padding: 20px; */
-  border: 3px solid red;
-  height: 100%;
-  width: 100%;
+
+.flip-card {
+  border: 5px solid red;
+  height: 330px;
+  width: 300px;
   background-color: #0d1f30;
   border-radius: 25px;
   margin: auto;
   
   margin: 10px;
-}
-
-.posterImg{
-    width: 100;
-    max-height: 80%;
-    border-radius: 25px;
-
-    display: flex;
-    flex-direction: row;
-}
-.title{
-  width: 250;
-  max-height: 250;
-  color: red;
-
-  flex-direction: row;
-  /* z-index: 3; */
-}
-#title::after {
-  content: attr(data-content);
-}
-
-.flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  overflow: hidden;
 }
 
 .flip-card-inner {
   position: relative;
-  width: 100%;
+  width: 300px;
   height: 100%;
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  border-radius: 25px;
 }
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
@@ -119,10 +95,11 @@ body::-webkit-scrollbar-thumb:hover {
 
 .flip-card-front, .flip-card-back {
   position: absolute;
-  width: 100%;
+  width: 300px;
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
+  
 }
 .flip-card-front {
   background-color:transparent;
@@ -132,5 +109,24 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: black;
   color: white;
   transform: rotateY(180deg);
+  padding-top: 20px;
 }
+.posterImg{
+  width: 300px;
+  max-height: 100%;
+  /* border-radius: 25px; */
 
+  display: flex;
+  flex-direction: row;
+}
+.title{
+width: 250;
+max-height: 250;
+color: red;
+
+flex-direction: row;
+/* z-index: 3; */
+}
+#title::after {
+content: attr(data-content);
+}
