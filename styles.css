@@ -140,23 +140,19 @@ body::-webkit-scrollbar-thumb:hover {
   border-radius: 25px;
 }
 .title{
-width: 250;
-max-height: 250;
-color:white;
-font-weight: bolde;
+font-weight: bolder;
 font-style: oblique;
 flex-direction: row;
-/* z-index: 3; */
+line-height: 25px;
 }
 .year{
-  width: 250;
-  max-height: 250;
-  color:white;
   font-weight: bold;
   font-style: oblique;
+  line-height: 25px;
+  
   
   flex-direction: row;
-  /* z-index: 3; */
+
   }
   #year::after {
     content: attr(data-content);

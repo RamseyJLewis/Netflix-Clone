@@ -136,7 +136,7 @@ function singleItem(id){
       description.innerText =  res.Plot 
       rating.innerText = 'Rated:  ' + res.Rated
       director.innerText = 'Director: '  + res.Director
-      genre.innerText = 'Genre:  ' + res.Genre
+      genre.innerText =  res.Genre
       reviews.innerText = res.Ratings[1].Source + ': ' + res.Ratings[1].Value 
 
       description.setAttribute('class', 'description')  
@@ -144,8 +144,9 @@ function singleItem(id){
       director.setAttribute('class', 'director') 
       genre.setAttribute('class', 'genre') 
      
-      currentItem.appendChild(genre)
+      
       currentItem.appendChild(description)
+      currentItem.appendChild(genre)
       currentItem.appendChild(director)
       currentItem.appendChild(reviews)  +  currentItem.appendChild(rating)
     })
