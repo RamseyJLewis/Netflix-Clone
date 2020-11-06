@@ -15,14 +15,14 @@ function search(){
     // Created So That if search was just done you cant do it again
     if( query !== document.getElementById('search').value){
       query = document.getElementById('search').value ;
-    } if( query == ''){
+    }
+    if( query == ''){
       query = 'fire' ;
     }
     if( query !== lastQuery){
       page = 1
       content.innerHTML = ''
     } 
-
     if( query == lastQuery){
       page++
     }
@@ -73,7 +73,6 @@ function web(res){
     if(picture.src.slice(-3) == "N/A"){
       picture.src ='./assets/noImage.jpg'
     }
-
     // Read from bottom is HTML indentation 
           flipCardBack.appendChild(title)
           flipCardBack.appendChild(year)
@@ -85,7 +84,6 @@ function web(res){
     content.appendChild(flipCard) 
 
   }
-
 }
 
 function searchInfo(){
@@ -107,11 +105,9 @@ function searchInfo(){
         .then (res => res.json())
         .then(res => singleItem(res))
         .catch(err => console.log(err)) 
-    
 }
 
 function singleItem(id){
-
   //has more information tha abover url
   let infoUrl = `http://www.omdbapi.com/?i=${id}&apikey=88bd5903`;  
   
@@ -167,7 +163,6 @@ window.addEventListener('scroll', function(e) {
   if(window.scrollX+window.innerWidth >= content.offsetWidth ){
     search()
   }
- 
 })
 // alterSearch()
 // onLoad()

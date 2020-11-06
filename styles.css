@@ -67,9 +67,6 @@ body::-webkit-scrollbar-thumb:hover {
   position: fixed;
 } 
 
-
-
-
 /* POSTER  ////////////////////////////// */
 #content{
   display: flex;
