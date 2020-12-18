@@ -6,8 +6,8 @@ document.getElementById('firstScreen').addEventListener('click',function (){
 let query = ''; 
 let page = 1;
 let lastQuery  = '';
-let url = `http://www.omdbapi.com/?t=${query}&page=${page}&apikey=88bd5903`;
-let infoUrl = `http://www.omdbapi.com/?i=${query}&apikey=88bd5903`;
+let url = `https://www.omdbapi.com/?t=${query}&page=${page}&apikey=88bd5903`;
+let infoUrl = `https://www.omdbapi.com/?i=${query}&apikey=88bd5903`;
 let content = document.getElementById('content');
 
 
